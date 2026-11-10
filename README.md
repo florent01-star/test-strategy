@@ -1,7 +1,6 @@
 <div align="center">
 
-# Florent — Portfolio QA
-### QA Test Manager / Test Lead · Tricentis Demo Web Shop
+# Tricentis Demo Web Shop
 
 **Transformer une application e-commerce legacy et peu documentée en un référentiel de test structuré, priorisé et traçable.**
 
@@ -20,12 +19,16 @@
 
 ## Livrables
 
+Les livrables sont consultables en ligne (GitHub Pages), sans rien télécharger :
+
 | Document | Rôle |
 |---|---|
-| [`Stratégie de test.docx`](Stratégie%20de%20test.docx) | Cadre d’approche : périmètre, priorisation par les risques et principes de test fonctionnel et de non-régression. Ouvrir le document pour consulter la stratégie détaillée. |
-| [`Requirements.xlsx`](Requirements.xlsx) | Baseline reconstruite des exigences métier et fonctionnelles, organisée par domaine et priorité. |
-| [`Test Cases.xlsx`](Test%20Cases.xlsx) | Référentiel des 52 scénarios, avec type positif/négatif, priorité, exigences couvertes et objectif de test. |
-| [`Matrice_Tracabilite.xlsx`](Matrice_Tracabilite.xlsx) | Vue de couverture reliant exigences, cas de test et domaines ; permet de vérifier la couverture FR à 100 %. |
+| [Stratégie de test](https://florent01-star.github.io/test-strategy/Strategie_de_test.html) | Cadre d’approche : périmètre, priorisation par les risques et principes de test fonctionnel et de non-régression. |
+| [Requirements](https://florent01-star.github.io/test-strategy/Requirements.html) | Baseline reconstruite des exigences métier et fonctionnelles, organisée par domaine et priorité. |
+| [Test Cases](https://florent01-star.github.io/test-strategy/Test_Cases.html) | Référentiel des 52 scénarios, avec type positif/négatif, priorité, exigences couvertes et objectif de test. |
+| [Matrice de traçabilité](https://florent01-star.github.io/test-strategy/Matrice_Tracabilite.html) | Vue de couverture reliant exigences, cas de test et domaines ; permet de vérifier la couverture FR à 100 %. |
+
+Les fichiers sources (Word et Excel) sont disponibles dans le dossier [`Docs`](Docs).
 
 ## Note méthodologique
 
@@ -33,4 +36,4 @@ L’application étudiée est un **bac à sable public statique**, sans cycle ac
 
 ---
 
-*Portfolio de conception QA sur une application de démonstration. Les indicateurs de couverture décrivent la traçabilité exigences-tests, et non le succès d’une campagne d’exécution.*
+*Les indicateurs de couverture décrivent la traçabilité exigences-tests, et non le succès d’une campagne d’exécution.*
