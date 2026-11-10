@@ -1,5 +1,3 @@
-<div align="center">
-
 # Tricentis Demo Web Shop
 
 **Transformer une application e-commerce legacy et peu documentée en un référentiel de test structuré, priorisé et traçable.**
@@ -28,7 +26,7 @@ Les livrables sont consultables en ligne (GitHub Pages), sans rien télécharger
 | [Test Cases](https://florent01-star.github.io/test-strategy/Test_Cases.html) | Référentiel des 52 scénarios, avec type positif/négatif, priorité, exigences couvertes et objectif de test. |
 | [Matrice de traçabilité](https://florent01-star.github.io/test-strategy/Matrice_Tracabilite.html) | Vue de couverture reliant exigences, cas de test et domaines ; permet de vérifier la couverture FR à 100 %. |
 
-Les fichiers sources (Word et Excel) sont disponibles dans le dossier [`Docs`](Docs).
+Les fichiers sources (Word et Excel) sont disponibles dans le dossier Docs du projet (à consulter en clonant le projet par exemple).
 
 ## Note méthodologique
 
