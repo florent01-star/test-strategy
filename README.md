@@ -4,8 +4,6 @@
 
 [Application de démonstration](https://demowebshop.tricentis.com/)
 
-</div>
-
 ---
 
 ## En bref
