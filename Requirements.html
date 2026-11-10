@@ -167,7 +167,7 @@
 
 <div class="container">
     <header>
-        <h1>Référentiel des Exigences Métier (BR) & Fonctionnelles (FR)</h1>
+        <h1>Référentiel des Exigences Métier (BR) &amp; Fonctionnelles (FR)</h1>
         <p class="subtitle">Application cible : Demo Web Shop (Tricentis Tosca / nopCommerce) | Périmètre : Parcours d'achat E2E</p>
     </header>
 
@@ -187,7 +187,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-AUTH-01</td>
                         <td class="title-cell">Authentification sécurisée</td>
                         <td class="id-cell id-fr">FR-AUTH-01.1</td>
@@ -195,23 +195,47 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Lorsque l'utilisateur saisit une adresse e-mail valide et son mot de passe associé puis clique sur "Log in", le système valide les identifiants, redirige vers la page d'accueil et affiche l'e-mail du compte dans l'en-tête de navigation.</td>
                     </tr>
-                    <tr>
+                                        <tr>
+                        <td class="id-cell id-br">BR-AUTH-01</td>
+                        <td class="title-cell">Authentification sécurisée</td>
+                        <td class="id-cell id-fr">FR-AUTH-01.2</td>
+                        <td class="title-cell">Validation et Redirection</td>
+                        <td><span class="badge badge-p1">P1 - Critique</span></td>
+                        <td class="desc-cell">Lorsqu'un utilisateur initie sa connexion depuis la page panier et soumet des identifiants valides, le système l'authentifie puis le redirige vers la page panier.</td>
+                    </tr>
+                                        <tr>
+                        <td class="id-cell id-br">BR-AUTH-01</td>
+                        <td class="title-cell">Authentification sécurisée</td>
+                        <td class="id-cell id-fr">FR-AUTH-01.3</td>
+                        <td class="title-cell">Mise à jour de l'en-tête</td>
+                        <td><span class="badge badge-p2">P2 - Haute</span></td>
+                        <td class="desc-cell">Une fois l'utilisateur authentifié, le système doit remplacer le lien "Log in" de l'en-tête par l'adresse e-mail du client (cliquable vers son compte) et afficher le lien "Log out".</td>
+                    </tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-AUTH-02</td>
                         <td class="title-cell">Rejet des accès invalides</td>
                         <td class="id-cell id-fr">FR-AUTH-02.1</td>
-                        <td class="title-cell">Rejet identifiants incorrects</td>
+                        <td class="title-cell">Contrôle de format de l'e-mail</td>
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
-                        <td class="desc-cell">Si l'adresse e-mail n'est pas inscrite ou si le mot de passe est erroné, le système refuse l'authentification et affiche le message d'erreur rouge : "Login was unsuccessful. Please correct the errors and try again." (avec "The credentials provided are incorrect").</td>
+                        <td class="desc-cell">Si la saisie de l’e-mail ne respecte pas une structure valide (ex. sans arobase), le système bloque la validation côté client/serveur et affiche la mention d’erreur : "Please enter a valid email address.".</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-AUTH-02</td>
                         <td class="title-cell">Rejet des accès invalides</td>
                         <td class="id-cell id-fr">FR-AUTH-02.2</td>
-                        <td class="title-cell">Contrôle de format email</td>
+                        <td class="title-cell">Rejet d'un compte inexistant</td>
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
-                        <td class="desc-cell">Si la saisie de l'e-mail ne respecte pas une structure valide (ex. sans arobase), le système bloque la validation côté client/serveur et affiche la mention d'erreur : "Please enter a valid email address.".</td>
+                        <td class="desc-cell">Si l’utilisateur soumet un formulaire avec une adresse e-mail au bon format mais absente de la base de données (ou vide), le système refuse l’accès et affiche l’erreur : "Login was unsuccessful. Please correct the errors and try again. No customer account found".</td>
                     </tr>
-                    <tr>
+                                        <tr>
+                        <td class="id-cell id-br">BR-AUTH-02</td>
+                        <td class="title-cell">Rejet des accès invalides</td>
+                        <td class="id-cell id-fr">FR-AUTH-02.3</td>
+                        <td class="title-cell">Rejet d'un mot de passe erroné</td>
+                        <td><span class="badge badge-p1">P1 - Critique</span></td>
+                        <td class="desc-cell">Si l'utilisateur soumet une adresse e-mail existante mais avec un mot de passe incorrect ou vide, le système refuse l'accès et affiche l'erreur : "Login was unsuccessful. Please correct the errors and try again. The credentials provided are incorrect".</td>
+                    </tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-AUTH-03</td>
                         <td class="title-cell">Persistance de session</td>
                         <td class="id-cell id-fr">FR-AUTH-03.1</td>
@@ -219,7 +243,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Tant que l'utilisateur navigue sur le site, la session reste active et ses informations d'authentification restent conservées d'une page à l'autre.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-AUTH-03</td>
                         <td class="title-cell">Persistance de session</td>
                         <td class="id-cell id-fr">FR-AUTH-03.2</td>
@@ -227,7 +251,7 @@
                         <td><span class="badge badge-p3">P3 - Moyenne</span></td>
                         <td class="desc-cell">Si la case "Remember me?" a été cochée lors de la connexion, la session reste authentifiée après fermeture et réouverture complète du navigateur.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-AUTH-04</td>
                         <td class="title-cell">Clôture de session</td>
                         <td class="id-cell id-fr">FR-AUTH-04.1</td>
@@ -235,7 +259,15 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Au clic sur le lien "Log out" dans l'en-tête, la session utilisateur est détruite, le lien est remplacé par "Log in" et l'accès aux sections privées (ex. My Account) est immédiatement révoqué.</td>
                     </tr>
-                    <tr>
+                                        <tr>
+                        <td class="id-cell id-br">BR-AUTH-04</td>
+                        <td class="title-cell">Clôture de session</td>
+                        <td class="id-cell id-fr">FR-AUTH-04.2</td>
+                        <td class="title-cell">Révocation des accès sécurisés</td>
+                        <td><span class="badge badge-p1">P1 - Critique</span></td>
+                        <td class="desc-cell">Une fois déconnecté, toute tentative d'accès à une page réservée aux membres (ex : My Account, Orders, ou étape de paiement) ou l'utilisation du bouton "Précédent" du navigateur ne doit pas restaurer la session et doit exiger une ré-authentification.</td>
+                    </tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-AUTH-05</td>
                         <td class="title-cell">Fusion du panier à la connexion</td>
                         <td class="id-cell id-fr">FR-AUTH-05.1</td>
@@ -243,7 +275,15 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Si un utilisateur ajoute des articles en tant que visiteur anonyme puis se connecte à un compte possédant déjà des articles, le système fusionne les deux paniers sans écraser ni doubler arbitrairement les sélections.</td>
                     </tr>
-                </tbody>
+                                    <tr>
+                        <td class="id-cell id-br">BR-AUTH-05</td>
+                        <td class="title-cell">Fusion du panier à la connexion</td>
+                        <td class="id-cell id-fr">FR-AUTH-05.2</td>
+                        <td class="title-cell">Fusion et cumul des articles</td>
+                        <td><span class="badge badge-p2">P2 - Haute</span></td>
+                        <td class="desc-cell">Si le compte client possédait déjà des articles dans son panier avant la connexion, le système doit fusionner le panier visiteur avec le panier existant (les articles distincts s'ajoutent, et les quantités des articles identiques se cumulent).</td>
+                    </tr>
+                    </tbody>
             </table>
         </div>
     </section>
@@ -264,7 +304,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-01</td>
                         <td class="title-cell">Achat de produits standards</td>
                         <td class="id-cell id-fr">FR-CAT-01.1</td>
@@ -272,15 +312,15 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Au clic sur un article depuis la grille du catalogue ou les résultats de recherche, le système affiche la page produit dédiée présentant le nom, l'image, la description et le prix unitaire de référence.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-01</td>
                         <td class="title-cell">Achat de produits standards</td>
                         <td class="id-cell id-fr">FR-CAT-01.2</td>
                         <td class="title-cell">Contrôle de quantité à l'ajout</td>
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
-                        <td class="desc-cell">Le champ "Qty" doit être initialisé à 1. Le système n'autorise que des entiers strictement positifs (&ge; 1). Toute valeur nulle, négative ou alphabétique bloque l'ajout au panier.</td>
+                        <td class="desc-cell">Le champ "Qty" doit être initialisé à 1. Le système n'autorise que des entiers strictement positifs (≥ 1). Toute valeur nulle, négative ou alphabétique bloque l'ajout au panier.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-01</td>
                         <td class="title-cell">Achat de produits standards</td>
                         <td class="id-cell id-fr">FR-CAT-01.3</td>
@@ -288,7 +328,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Au clic sur "Add to cart", le système ajoute l'article au panier, incrémente le compteur dans l'en-tête (Shopping cart (X)) et affiche le bandeau vert de confirmation : "The product has been added to your shopping cart".</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-02</td>
                         <td class="title-cell">Options obligatoires</td>
                         <td class="id-cell id-fr">FR-CAT-02.1</td>
@@ -296,7 +336,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Sur la fiche d'un produit configurable (ex. Build your own computer), les groupes d'options obligatoires (Processeur, RAM, Disque Dur) doivent être signalés à l'utilisateur.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-02</td>
                         <td class="title-cell">Options obligatoires</td>
                         <td class="id-cell id-fr">FR-CAT-02.2</td>
@@ -304,7 +344,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Si l'utilisateur clique sur "Add to cart" sans avoir sélectionné au moins un composant obligatoire (ex. liste déroulante RAM laissée sur le choix vide ou disque radio non coché), le système refuse l'ajout et affiche un message d'erreur explicite.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-03</td>
                         <td class="title-cell">Options facultatives multiples</td>
                         <td class="id-cell id-fr">FR-CAT-03.1</td>
@@ -312,7 +352,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Pour les composants facultatifs présentés sous forme de cases à cocher (ex. logiciels Image Viewer, Office, etc.), l'utilisateur doit pouvoir sélectionner zéro, une ou plusieurs options sans blocage à l'ajout.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-03</td>
                         <td class="title-cell">Options facultatives multiples</td>
                         <td class="id-cell id-fr">FR-CAT-03.2</td>
@@ -320,7 +360,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">L'ensemble des options obligatoires et facultatives choisies par l'utilisateur doit être fidèlement associé à la ligne d'article lors de son transfert vers le panier d'achat.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-04</td>
                         <td class="title-cell">Tarification des suppléments</td>
                         <td class="id-cell id-fr">FR-CAT-04.1</td>
@@ -328,7 +368,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Chaque valeur d'option entraînant un surcoût doit afficher explicitement son montant additionnel dans son libellé (ex : [+$100.00]).</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CAT-04</td>
                         <td class="title-cell">Tarification des suppléments</td>
                         <td class="id-cell id-fr">FR-CAT-04.2</td>
@@ -357,15 +397,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-01</td>
                         <td class="title-cell">Intégrité du récapitulatif</td>
                         <td class="id-cell id-fr">FR-CART-01.1</td>
                         <td class="title-cell">Affichage détaillé des lignes articles</td>
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
-                        <td class="desc-cell">Pour chaque article présent, la grille du panier doit afficher son visuel, son nom, ses attributs configurés (ex. RAM, HDD), son prix unitaire, sa quantité ("Qty") et le total de la ligne (Prix unitaire &times; Quantité).</td>
+                        <td class="desc-cell">Pour chaque article présent, la grille du panier doit afficher son visuel, son nom, ses attributs configurés (ex. RAM, HDD), son prix unitaire, sa quantité ("Qty") et le total de la ligne (Prix unitaire × Quantité).</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-01</td>
                         <td class="title-cell">Intégrité du récapitulatif</td>
                         <td class="id-cell id-fr">FR-CART-01.2</td>
@@ -373,7 +413,7 @@
                         <td><span class="badge badge-p3">P3 - Moyenne</span></td>
                         <td class="desc-cell">Le clic sur le nom du produit dans la ligne du panier doit rediriger vers sa fiche descriptive avec les attributs précédemment choisis pré-sélectionnés.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-02</td>
                         <td class="title-cell">Modification et suppression</td>
                         <td class="id-cell id-fr">FR-CART-02.1</td>
@@ -381,7 +421,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Lorsque l'utilisateur modifie la valeur du champ "Qty" d'une ligne puis clique sur "Update shopping cart", le système met à jour la quantité et recalcule le total de la ligne et le sous-total global.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-02</td>
                         <td class="title-cell">Modification et suppression</td>
                         <td class="id-cell id-fr">FR-CART-02.2</td>
@@ -389,7 +429,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Si l'utilisateur coche la case "Remove" en face d'un ou plusieurs articles et clique sur "Update shopping cart", les lignes sélectionnées sont définitivement retirées du panier.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-02</td>
                         <td class="title-cell">Modification et suppression</td>
                         <td class="id-cell id-fr">FR-CART-02.3</td>
@@ -397,15 +437,15 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Lorsque le dernier article est supprimé, le système affiche le message d'état "Your Shopping Cart is empty!" et masque le tableau des articles ainsi que le bloc Checkout.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-03</td>
                         <td class="title-cell">Contrôle des quantités et stocks</td>
                         <td class="id-cell id-fr">FR-CART-03.1</td>
                         <td class="title-cell">Rejet des quantités nulles ou négatives</td>
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
-                        <td class="desc-cell">Si une quantité &le; 0 ou non numérique est saisie lors de l'update, le système supprime l'article (si 0) ou bloque la mise à jour avec un message d'erreur explicite sans corrompre le panier.</td>
+                        <td class="desc-cell">Si une quantité ≤ 0 ou non numérique est saisie lors de l'update, le système supprime l'article (si 0) ou bloque la mise à jour avec un message d'erreur explicite sans corrompre le panier.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-03</td>
                         <td class="title-cell">Contrôle des quantités et stocks</td>
                         <td class="id-cell id-fr">FR-CART-03.2</td>
@@ -413,7 +453,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Si la quantité demandée dépasse le stock disponible, le système affiche un message d'alerte rouge sur la ligne de l'article et désactive le bouton "Checkout".</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-04</td>
                         <td class="title-cell">Exactitude du calcul panier</td>
                         <td class="id-cell id-fr">FR-CART-04.1</td>
@@ -421,7 +461,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Le "Sub-Total" affiché en bas de page doit correspondre strictement à la somme arithmétique de tous les totaux de lignes articles.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-04</td>
                         <td class="title-cell">Exactitude du calcul panier</td>
                         <td class="id-cell id-fr">FR-CART-04.2</td>
@@ -429,7 +469,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Le montant "Total" doit être calculé en intégrant : Sub-Total - Remise éventuelle + Frais d'expédition estimés + Taxes éventuelles.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-05</td>
                         <td class="title-cell">Acceptation obligatoire des CGV</td>
                         <td class="id-cell id-fr">FR-CART-05.1</td>
@@ -437,7 +477,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">La case "I agree with the terms of service" doit être décochée par défaut.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CART-05</td>
                         <td class="title-cell">Acceptation obligatoire des CGV</td>
                         <td class="id-cell id-fr">FR-CART-05.2</td>
@@ -466,7 +506,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-PROMO-01</td>
                         <td class="title-cell">Application d'un coupon valide</td>
                         <td class="id-cell id-fr">FR-PROMO-01.1</td>
@@ -474,7 +514,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Au clic sur le bouton "Apply coupon", le système vérifie le code saisi dans le champ "Discount Code". Si le code est valide, la réduction est immédiatement appliquée.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-PROMO-01</td>
                         <td class="title-cell">Application d'un coupon valide</td>
                         <td class="id-cell id-fr">FR-PROMO-01.2</td>
@@ -482,7 +522,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Un message de confirmation vert s'affiche ("The coupon code was applied"). Si un second coupon non cumulable est saisi, le système doit remplacer l'ancien ou refuser le cumul selon la règle métier.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-PROMO-02</td>
                         <td class="title-cell">Rejet des coupons invalides</td>
                         <td class="id-cell id-fr">FR-PROMO-02.1</td>
@@ -490,7 +530,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Si le code saisi est inexistant, expiré ou si les conditions du panier ne sont pas remplies, le système affiche une alerte rouge ("The coupon code was not found" ou équivalent).</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-PROMO-02</td>
                         <td class="title-cell">Rejet des coupons invalides</td>
                         <td class="id-cell id-fr">FR-PROMO-02.2</td>
@@ -498,7 +538,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">En cas d'erreur de coupon, aucun montant de réduction ne doit être déduit et le total général reste inchangé.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-PROMO-03</td>
                         <td class="title-cell">Imputation et affichage de la remise</td>
                         <td class="id-cell id-fr">FR-PROMO-03.1</td>
@@ -506,7 +546,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Dès validation du coupon, une ligne distincte "Discount (Code)" apparaît dans le récapitulatif des coûts avec le montant de la déduction affiché en négatif (ex. -$10.00).</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-PROMO-03</td>
                         <td class="title-cell">Imputation et affichage de la remise</td>
                         <td class="id-cell id-fr">FR-PROMO-03.2</td>
@@ -535,15 +575,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-01</td>
                         <td class="title-cell">Séquentialité des étapes</td>
                         <td class="id-cell id-fr">FR-CHK-01.1</td>
                         <td class="title-cell">Ouverture séquentielle de l'accordéon</td>
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
-                        <td class="desc-cell">L'accordéon du One-Page Checkout doit afficher les étapes dans l'ordre strict (1. Billing &rarr; 2. Shipping Address &rarr; 3. Shipping Method &rarr; 4. Payment Method &rarr; 5. Payment Info &rarr; 6. Confirm). L'étape N+1 ne s'ouvre que si l'étape N est validée via "Continue".</td>
+                        <td class="desc-cell">L'accordéon du One-Page Checkout doit afficher les étapes dans l'ordre strict (1. Billing → 2. Shipping Address → 3. Shipping Method → 4. Payment Method → 5. Payment Info → 6. Confirm). L'étape N+1 ne s'ouvre que si l'étape N est validée via "Continue".</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-01</td>
                         <td class="title-cell">Séquentialité des étapes</td>
                         <td class="id-cell id-fr">FR-CHK-01.2</td>
@@ -551,7 +591,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Le clic sur l'en-tête d'une étape précédente déjà validée doit permettre de la rouvrir pour modifier ses données, refermant temporairement les étapes suivantes.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-02</td>
                         <td class="title-cell">Gestion des adresses</td>
                         <td class="id-cell id-fr">FR-CHK-02.1</td>
@@ -559,7 +599,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Si le client a déjà des adresses associées à son compte, une liste déroulante lui permet de sélectionner une adresse existante qui pré-remplit les champs automatiquement.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-02</td>
                         <td class="title-cell">Gestion des adresses</td>
                         <td class="id-cell id-fr">FR-CHK-02.2</td>
@@ -567,7 +607,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Si "New Address" est sélectionné, tous les champs obligatoires (First name, Last name, Email, Country, City, Address 1, Zip/Postal code, Phone number) doivent être complétés. Tout oubli bloque l'étape avec une indication visuelle sur le champ en erreur.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-03</td>
                         <td class="title-cell">Distinction Physique / Virtuel</td>
                         <td class="id-cell id-fr">FR-CHK-03.1</td>
@@ -575,7 +615,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Pour un panier contenant au moins un bien matériel, les étapes 2 ("Shipping Address") et 3 ("Shipping Method") doivent être obligatoirement affichées et complétées.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-03</td>
                         <td class="title-cell">Distinction Physique / Virtuel</td>
                         <td class="id-cell id-fr">FR-CHK-03.2</td>
@@ -583,7 +623,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Si le panier contient exclusivement des biens virtuels (ex. Gift cards dématérialisées), le système doit automatiquement masquer/sauter les étapes 2 et 3 et passer directement de Billing à Payment Method.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-04</td>
                         <td class="title-cell">Mode et frais d'expédition</td>
                         <td class="id-cell id-fr">FR-CHK-04.1</td>
@@ -591,7 +631,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">L'étape 3 doit proposer au moins les modes d'expédition disponibles (ex. Ground, Next Day Air, 2nd Day Air) avec leurs prix unitaires respectifs.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-04</td>
                         <td class="title-cell">Mode et frais d'expédition</td>
                         <td class="id-cell id-fr">FR-CHK-04.2</td>
@@ -599,7 +639,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Le choix du mode d'expédition doit mettre à jour le montant de la ligne "Shipping" et recalculer le total global en conséquence.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-05</td>
                         <td class="title-cell">Mode et frais de paiement</td>
                         <td class="id-cell id-fr">FR-CHK-05.1</td>
@@ -607,7 +647,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">L'étape 4 doit présenter les modes configurés (Cash On Delivery - COD, Check / Money Order, Credit Card, Purchase Order) sous forme de boutons radio (sélection unique obligatoire).</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-05</td>
                         <td class="title-cell">Mode et frais de paiement</td>
                         <td class="id-cell id-fr">FR-CHK-05.2</td>
@@ -615,7 +655,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Si un moyen de paiement engendre des frais de gestion (ex. COD avec surcharge), le surcoût doit être affiché à côté de son libellé et imputé dans le récapitulatif financier final.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-06</td>
                         <td class="title-cell">Contrôle des données de paiement</td>
                         <td class="id-cell id-fr">FR-CHK-06.1</td>
@@ -623,7 +663,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">À l'étape 5, si "Credit Card" est choisi, le formulaire doit exiger : Nom sur la carte, Type de carte, Numéro de carte valide (algorithme Luhn), Date d'expiration non échue et code CVV (3 ou 4 chiffres). Tout format invalide bloque la validation.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-06</td>
                         <td class="title-cell">Contrôle des données de paiement</td>
                         <td class="id-cell id-fr">FR-CHK-06.2</td>
@@ -631,7 +671,7 @@
                         <td><span class="badge badge-p2">P2 - Haute</span></td>
                         <td class="desc-cell">Si un mode hors ligne (Check ou COD) est choisi, l'étape 5 doit afficher les instructions textuelles de règlement sans exiger de saisie de coordonnées bancaires.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-07</td>
                         <td class="title-cell">Récapitulatif contractuel final</td>
                         <td class="id-cell id-fr">FR-CHK-07.1</td>
@@ -639,7 +679,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">L'étape 6 ("Confirm Order") doit afficher l'adresse de facturation, l'adresse de livraison, le transporteur, le moyen de paiement, la liste des articles et la décomposition financière exacte (Sub-Total, Shipping, Tax, Total).</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CHK-07</td>
                         <td class="title-cell">Récapitulatif contractuel final</td>
                         <td class="id-cell id-fr">FR-CHK-07.2</td>
@@ -668,7 +708,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CONF-01</td>
                         <td class="title-cell">Accusé de réception et N° unique</td>
                         <td class="id-cell id-fr">FR-CONF-01.1</td>
@@ -676,7 +716,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Dès la confirmation, la page /checkout/completed/ affiche le message principal "Your order has been successfully processed!".</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CONF-01</td>
                         <td class="title-cell">Accusé de réception et N° unique</td>
                         <td class="id-cell id-fr">FR-CONF-01.2</td>
@@ -684,7 +724,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Un numéro unique de commande est généré et affiché sur la page ("Order number: XXXXX"), accompagné d'un lien cliquable "Click here for order details".</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CONF-02</td>
                         <td class="title-cell">Vidage du panier post-achat</td>
                         <td class="id-cell id-fr">FR-CONF-02.1</td>
@@ -692,7 +732,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">Dès la validation définitive de la commande, le panier actif est entièrement purgé. Le compteur dans l'en-tête repasse à Shopping cart (0).</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CONF-03</td>
                         <td class="title-cell">Archivage dans l'espace client</td>
                         <td class="id-cell id-fr">FR-CONF-03.1</td>
@@ -700,7 +740,7 @@
                         <td><span class="badge badge-p1">P1 - Critique</span></td>
                         <td class="desc-cell">En accédant à My Account &gt; Orders, la commande validée doit immédiatement figurer en tête de liste avec son numéro d'ordre, sa date du jour, son statut et son montant total conforme.</td>
                     </tr>
-                    <tr>
+                                        <tr>
                         <td class="id-cell id-br">BR-CONF-03</td>
                         <td class="title-cell">Archivage dans l'espace client</td>
                         <td class="id-cell id-fr">FR-CONF-03.2</td>
@@ -714,6 +754,6 @@
     </section>
 </div>
 
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
-```
