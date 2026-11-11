@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6 { color: #183b56; line-height: 1.25; margin: 1.35em 0 .55
 h1 { font-size: 1.65rem; border-bottom: 2px solid #d8e2ea; padding-bottom: .35em; }
 h1.doc-title { margin-top: 0; font-size: 1.9rem; }
 h2 { font-size: 1.35rem; }
- h2.section-title { font-size: 1.65rem; border-bottom: 2px solid #d8e2ea; padding-bottom: .35em; }
 h3 { font-size: 1.12rem; }
 p { margin: .55em 0 .8em; }
 .subtitle { font-weight: 700; color: #476174; }
@@ -37,7 +36,7 @@ a { color: #155c88; text-decoration: underline; }
 </style>
 </head>
 <body><main>
-<h1 class="doc-title"><strong>STRATÉGIE DE TEST FONCTIONNEL ET DE NON-RÉGRESSION</strong></h1>
+<h1><strong>STRATÉGIE DE TEST FONCTIONNEL ET DE NON-RÉGRESSION</strong></h1>
 <p><strong>PROJET PORTFOLIO — TRICENTIS DEMO WEB SHOP</strong></p>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Informations</strong></th><th scope="col"><strong>Détails</strong></th></tr>
@@ -48,7 +47,7 @@ a { color: #155c88; text-decoration: underline; }
 <tr><td><strong>Auteur</strong></td><td>Florent</td></tr>
 <tr><td><strong>Date</strong></td><td>09/11/2026</td></tr>
 </table></div>
-<h2 class="section-title"><strong>1. INTRODUCTION</strong></h2>
+<h1><strong>1. INTRODUCTION</strong></h1>
 <h2><strong>1.1 Contexte</strong></h2>
 <p><strong>Demo Web Shop</strong> est une application web e-commerce de démonstration mise à disposition par l&#x27;éditeur Tricentis (basée sur l&#x27;architecture open-source <em>nopCommerce</em>). Elle permet aux utilisateurs de parcourir un catalogue de produits (physiques, configurables ou dématérialisés), de gérer un panier et de passer des commandes en ligne.</p>
 <p>Dans le cadre de ce projet de portfolio, l&#x27;objectif est de définir et d&#x27;appliquer une stratégie de test fonctionnel et de non-régression réaliste, visant à évaluer et sécuriser la qualité du <strong>parcours d&#x27;achat critique (Core Business Flow)</strong>. </p>
@@ -62,7 +61,7 @@ a { color: #155c88; text-decoration: underline; }
 <li><strong>Bâtir un patrimoine de tests de non-régression (TNR)</strong> maintenable, combinant exécution manuelle et automatisation, pour détecter rapidement les effets de bord lors de futures évolutions.</li>
 <li><strong>Prioriser l&#x27;effort de test par les risques (Risk-Based Testing)</strong> afin d&#x27;optimiser le retour sur investissement (ROI) des campagnes.</li>
 </ul>
-<h2 class="section-title"><strong>2. PÉRIMÈTRE DE TEST (SCOPE)</strong></h2>
+<h1><strong>2. PÉRIMÈTRE DE TEST (SCOPE)</strong></h1>
 <h2><strong>2.1 Fonctionnalités incluses (In-Scope)</strong></h2>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Domaine fonctionnel</strong></th><th scope="col"><strong>Fonctionnalités et spécificités couvertes</strong></th></tr>
@@ -95,7 +94,7 @@ a { color: #155c88; text-decoration: underline; }
 <li>Validation finale et vérification du numéro de commande généré.</li>
 </ol>
 <p><em>Variante notable à couvrir :</em> Achat d&#x27;un produit dématérialisé (<em>Digital Download</em>) qui doit automatiquement masquer les étapes d&#x27;adresse et de mode de livraison lors du Checkout.</p>
-<h2 class="section-title"><strong>3. APPROCHE ET MÉTHODOLOGIE DE TEST</strong></h2>
+<h1><strong>3. APPROCHE ET MÉTHODOLOGIE DE TEST</strong></h1>
 <h2><strong>3.1 Niveaux et types de tests</strong></h2>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Type de test</strong></th><th scope="col"><strong>Objectif dans le projet</strong></th><th scope="col"><strong>Techniques associées</strong></th></tr>
@@ -106,13 +105,15 @@ a { color: #155c88; text-decoration: underline; }
 <tr><td><strong>Tests de Non-Régression</strong></td><td>S&#x27;assurer que les nouvelles versions n&#x27;introduisent pas d&#x27;effets de bord sur l&#x27;existant.</td><td>Automatisation des cas critiques et stables</td></tr>
 <tr><td><strong>Tests Exploratoires</strong></td><td>Découvrir des anomalies hors des sentiers battus et tester les cas aux limites de l&#x27;interface.</td><td>Chartes d&#x27;exploration (Session-Based Testing)</td></tr>
 </table></div>
-<h2><strong>3.2 Structure standard des scénarios de test</strong></h2>
-<p>Le référentiel fourni décrit la conception de haut niveau des scénarios de test :</p>
+<h2><strong>3.2 Structure standard des cas de test</strong></h2>
+<p>Chaque cas de test formalisé dans le référentiel comportera :</p>
 <ul>
-<li><strong>Conception :</strong> ID, titre, type, priorité, exigences couvertes et objectif du scénario.</li>
-<li><strong>Exécution (hors périmètre) :</strong> préconditions, données de test, étapes détaillées et résultats attendus.</li>
+<li><strong>ID Unique</strong> (ex : CART-TC-004) &amp; <strong>Titre explicite</strong></li>
+<li><strong>Exigence(s) liée(s)</strong> &amp; <strong>Priorité</strong> (P1 Critique à P3 Moyenne)</li>
+<li><strong>Préconditions</strong> &amp; <strong>Jeu de données (Test Data)</strong></li>
+<li><strong>Étapes d&#x27;actions détaillées</strong> &amp; <strong>Résultats attendus</strong> (au niveau de chaque étape clé)</li>
+<li><strong>Statut d&#x27;automatisation</strong> (Automatisable / Automatisé / Manuel)</li>
 </ul>
-<p>Le détail d'exécution est volontairement reporté : il dépend d'une version et d'un calendrier de campagne, absents ici.</p>
 <h2><strong>3.3 Axes de Tests Exploratoires (Chartes ciblées)</strong></h2>
 <p>Des sessions exploratoires cadrées viendront challenger la résilience de l&#x27;application sur :</p>
 <ul>
@@ -120,7 +121,7 @@ a { color: #155c88; text-decoration: underline; }
 <li><strong>Concurrence et session :</strong> Ouverture du panier sur deux onglets simultanés, suppression d&#x27;un article sur l&#x27;onglet A et passage au checkout sur l&#x27;onglet B.</li>
 <li><strong>Transition Visiteur </strong><strong>→</strong><strong> Connecté :</strong> Remplir un panier en mode anonyme, puis se connecter avec un compte possédant déjà des articles en panier (vérification des règles de fusion).</li>
 </ul>
-<h2 class="section-title"><strong>4. ANALYSE DES RISQUES PRODUIT (RISK-BASED TESTING)</strong></h2>
+<h1><strong>4. ANALYSE DES RISQUES PRODUIT (RISK-BASED TESTING)</strong></h1>
 <h2><strong>4.1 </strong><strong>Principes de priorisation (Approche par les risques - RBT)</strong></h2>
 <p>Conformément aux bonnes pratiques (ISTQB), la criticité d&#x27;un risque résulte du croisement entre :</p>
 <ul>
@@ -128,20 +129,24 @@ a { color: #155c88; text-decoration: underline; }
 <li><strong>La Probabilité d&#x27;occurrence (habituellement évaluée avec la MOE / Lead Dev) :</strong> risque technique lié à la complexité du code, aux adhérences architecturales ou à l&#x27;historique des anomalies.</li>
 </ul>
 <p><strong>Note méthodologique propre à ce projet : </strong>Dans le cadre de cet audit indépendant réalisé en « boîte noire » sans accès à l&#x27;équipe de développement (MOE) ni au code source de Demo Web Shop, la Probabilité est estimée par substitution via la Complexité Fonctionnelle et Combinatoire observable (nombre de règles de gestion imbriquées, appels asynchrones AJAX visibles, dépendance entre plusieurs écrans ou états de session). Dans un contexte projet réel, cette colonne ferait l&#x27;objet d&#x27;un atelier de Risk Poker conjoint entre le QA Lead, le Product Owner et le Lead Dev.</p>
-<h2><strong>4.2 Cartographie initiale des risques</strong></h2>
+<h2><strong>4.2 Cartographie des risques</strong></h2>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Domaine</strong></th><th scope="col"><strong>Risque identifié</strong></th><th scope="col"><strong>Complexité observable (Proxy Probabilité)</strong></th><th scope="col"><strong>Impact Métier</strong></th><th scope="col"><strong>Priorité de test</strong></th></tr>
-<tr><td><strong>Panier et Prix</strong></td><td>Erreur de calcul du montant total de la commande.</td><td><strong>Haute</strong> (Forte combinatoire : options + quantités + remises + taxes)</td><td>Critique</td><td><strong>P1 - Critique</strong></td></tr>
-<tr><td><strong>Checkout</strong></td><td>Blocage dans l&#x27;accordéon One-Page Checkout empêchant la commande.</td><td><strong>Haute</strong> (6 étapes séquentielles dépendantes d&#x27;appels AJAX)</td><td>Critique</td><td><strong>P1 - Critique</strong></td></tr>
-<tr><td><strong>Paiement</strong></td><td>Validation d&#x27;une commande avec des données de paiement invalides.</td><td><strong>Moyenne</strong> (Multiplicité des moyens de paiement et contrôles de surface)</td><td>Critique</td><td><strong>P1 - Critique</strong></td></tr>
-<tr><td><strong>Options Produits</strong></td><td>Perte des attributs sélectionnés (RAM, HDD) ou du surcoût lors de l&#x27;ajout au panier.</td><td><strong>Moyenne</strong> (Transmission d&#x27;état entre fiche produit et panier)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
-<tr><td><strong>Login / Session</strong></td><td>Perte ou mauvaise fusion du panier visiteur lors de la connexion au Checkout.</td><td><strong>Moyenne</strong> (Transition session anonyme vers session authentifiée)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
-<tr><td><strong>Login / Session</strong></td><td>Échec de création de compte ou compte dupliqué bloquant l&#x27;accès au checkout et à la commande.</td><td><strong>Moyenne</strong> (Validation de formulaire, contrôle d&#x27;unicité en base et transition vers la première session)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
-<tr><td><strong>Codes Promo</strong></td><td>Application incorrecte d&#x27;une remise ou mauvaise gestion d&#x27;un code invalide.</td><td><strong>Moyenne</strong> (Règles d&#x27;éligibilité et recalcul dynamique du panier)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
-<tr><td><strong>Panier (CGV)</strong></td><td>Accès au Checkout autorisé sans avoir coché la case obligatoire &quot;Terms of service&quot;.</td><td><strong>Faible</strong> (Contrôle booléen simple côté client/serveur)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
-<tr><td><strong>Confirmation</strong></td><td>Absence du récapitulatif dans l&#x27;historique client ou panier non vidé après achat.</td><td><strong>Faible</strong> (Affichage de données persistées en fin de flux)</td><td>Moyen</td><td><strong>P3 - Moyenne</strong></td></tr>
+<tr><td><strong>Panier et Prix</strong></td><td>Erreur de calcul du montant total de la commande, pouvant fausser silencieusement le montant facturé.</td><td><strong>Haute</strong> (Forte combinatoire : options + quantités + remises + taxes)</td><td>Critique</td><td><strong>P1 - Critique</strong></td></tr>
+<tr><td><strong>Checkout</strong></td><td>Blocage dans l'accordéon One-Page Checkout empêchant la commande.</td><td><strong>Haute</strong> (6 étapes séquentielles dépendantes d'appels AJAX)</td><td>Critique</td><td><strong>P1 - Critique</strong></td></tr>
+<tr><td><strong>Paiement</strong></td><td>Validation d'une commande avec des données de paiement invalides.</td><td><strong>Moyenne</strong> (Multiplicité des moyens de paiement et contrôles de surface)</td><td>Critique</td><td><strong>P1 - Critique</strong></td></tr>
+<tr><td><strong>Options Produits</strong></td><td>Perte des attributs sélectionnés (RAM, HDD) ou du surcoût lors de l'ajout au panier.</td><td><strong>Moyenne</strong> (Transmission d'état entre fiche produit et panier)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
+<tr><td><strong>Login/Session – fusion panier</strong></td><td>Perte ou mauvaise fusion du panier visiteur lors de la connexion au Checkout.</td><td><strong>Moyenne</strong> (Transition session anonyme vers session authentifiée)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
+<tr><td><strong>Login/Session – création de compte</strong></td><td>Échec de création de compte ou compte dupliqué bloquant l'accès au checkout et à la commande.</td><td><strong>Moyenne</strong> (Validation de formulaire, contrôle d'unicité en base et transition vers la première session)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
+<tr><td><strong>Codes Promo</strong></td><td>Application incorrecte d'une remise ou mauvaise gestion d'un code invalide.</td><td><strong>Moyenne</strong> (Règles d'éligibilité et recalcul dynamique du panier)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
+<tr><td><strong>Panier CGV</strong></td><td>Accès au Checkout autorisé sans avoir coché la case obligatoire « Terms of service ».</td><td><strong>Faible</strong> (Contrôle booléen simple côté client/serveur)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
+<tr><td><strong>Confirmation</strong></td><td>Absence du récapitulatif dans l'historique client ou panier non vidé après achat.</td><td><strong>Faible</strong> (Affichage de données persistées en fin de flux)</td><td>Moyen</td><td><strong>P3 - Moyenne</strong></td></tr>
 </table></div>
-<h2 class="section-title"><strong>5. STRATÉGIE DE NON-RÉGRESSION (TNR)</strong></h2>
+<h2><strong>4.3 Justification de l'analyse de risque</strong></h2>
+<p><strong>P1 – Critique :</strong> Le panier et les prix présentent un risque de calcul erroné et silencieux du montant facturé, avec une forte combinatoire observable entre options, quantités, remises et taxes ; l'impact financier direct justifie une priorité critique. Le Checkout enchaîne six étapes séquentielles dépendantes d'appels AJAX : cette complexité accroît le risque de blocage et, puisque toute rupture bloque la conversion, impose également une priorité P1. Le paiement constitue la validation finale du revenu ; la multiplicité des moyens de paiement et des contrôles de surface crée une complexité observable, tandis qu'une validation incorrecte affecterait directement l'encaissement. Ces risques et leur impact métier rendent le paiement critique.</p>
+<p><strong>P2 – Haute :</strong> Pour les options produits, la transmission de l'état de la fiche produit au panier peut perdre les attributs ou leur surcoût ; la dépendance entre ces étapes et son effet sur l'exactitude de la commande justifient un niveau haut. La fusion du panier visiteur et la création de compte reposent sur la transition entre session anonyme et session authentifiée, ainsi que sur des validations de formulaire et d'unicité ; un échec perturbe l'accès à l'achat, mais ces fonctions restent à une priorité inférieure aux risques qui bloquent directement et systématiquement le revenu. Les codes promo combinent règles d'éligibilité et recalcul dynamique : leur complexité expose à des remises incorrectes, avec un impact financier réel mais circonscrit. Enfin, le contournement de la case CGV obligatoire est un risque de blocage légal ; même si le contrôle booléen observé est simple, son impact de conformité justifie une priorité P2.</p>
+<p><strong>P3 – Moyenne :</strong> La confirmation intervient après l'achat et ses fonctions sont surtout en lecture, reposant principalement sur l'affichage de données persistées. Le risque de récapitulatif absent ou de panier non vidé peut dégrader la confiance et générer du support, mais sa complexité observable et son impact métier sont moindres que ceux des étapes de calcul, de conversion et d'encaissement ; une priorité moyenne est donc adaptée.</p>
+<h1><strong>5. STRATÉGIE DE NON-RÉGRESSION (TNR)</strong></h1>
 <h2><strong>5.1 Structuration du patrimoine de régression</strong></h2>
 <p>Pour éviter d&#x27;exécuter l&#x27;intégralité du référentiel à chaque mise à jour mineure, les tests sont répartis en trois cercles :</p>
 <h3><strong>Cercle 1 : Smoke Test &amp; Socle Critique (Exécution systématique)</strong></h3>
@@ -162,20 +167,21 @@ a { color: #155c88; text-decoration: underline; }
 <tr><td><strong>Tunnel Checkout / Paiement</strong></td><td>Validation des formulaires d&#x27;adresses, modes d&#x27;expédition, moyens de paiement (CB, Chèque, COD) et confirmation.</td></tr>
 </table></div>
 <h3><strong>Cercle 3 : Régression Complète (Full Regression)</strong></h3>
-<p>Exécution de l&#x27;ensemble des scénarios de test (P1, P2, P3) accompagnée d&#x27;une session exploratoire, réservée aux versions majeures (<em>Major Releases</em>) ou refontes architecturales.</p>
-<h2 class="section-title"><strong>6. ORGANISATION, OUTILLAGE ET TRAÇABILITÉ</strong></h2>
+<p>Exécution de l&#x27;ensemble des cas de test (P1, P2, P3) accompagnée d&#x27;une session exploratoire, réservée aux versions majeures (<em>Major Releases</em>) ou refontes architecturales.</p>
+<h1><strong>6. ORGANISATION, OUTILLAGE ET TRAÇABILITÉ</strong></h1>
 <h2><strong>6.1 Nomenclature et référentiel</strong></h2>
-<p>Les exigences (créées par rétro-ingénierie) et les scénarios de test suivent une convention de nommage stricte permettant une lecture immédiate :</p>
+<p>Les exigences (créées par rétro-ingénierie) et les cas de test suivent une convention de nommage stricte permettant une lecture immédiate :</p>
 <ul>
 <li><strong>Exigences Métier (Business) :</strong> BR-LOGIN-01, BR-CART-01...</li>
 <li><strong>Exigences Fonctionnelles :</strong> FR-LOGIN-01.1, FR-CART-01.2...</li>
-<li><strong>scénarios de test :</strong> TC-LOGIN-001, TC-CART-001, TC-CHK-001, TC-DISC-001, TC-CUST-001</li>
+<li><strong>Cas de Test :</strong> TC-LOGIN-001, TC-CART-001, TC-CHK-001, TC-DISC-001, TC-CUST-001</li>
 </ul>
+<p><strong>Note :</strong> le référentiel Test_Cases.html présente une anomalie mineure de numérotation dans le module Authentification et Session (passage de AUTH-TC-007 à AUTH-TC-009, sans cas AUTH-TC-008). Cette simple coquille de numérotation n'affecte ni la couverture ni la traçabilité ; elle sera corrigée lors d'une prochaine révision.</p>
 <h2><strong>6.2 Matrice de Traçabilité (RTM)</strong></h2>
 <p>Une <em>Requirements Traceability Matrix</em> assure une couverture bidirectionnelle :</p>
 <ul>
-<li><strong>Traçabilité ascendante :</strong> Chaque exigence fonctionnelle est couverte par au moins un scénario de test positif et, le cas échéant, un scénario négatif.</li>
-<li><strong>Traçabilité descendante :</strong> Chaque scénario de test et chaque anomalie est rattaché à une exigence précise, évitant les tests &quot;orphelins&quot; sans valeur métier démontrée.</li>
+<li><strong>Traçabilité ascendante :</strong> Chaque exigence fonctionnelle est couverte par au moins un cas de test positif et, le cas échéant, un cas négatif.</li>
+<li><strong>Traçabilité descendante :</strong> Chaque cas de test et chaque anomalie est rattaché à une exigence précise, évitant les tests &quot;orphelins&quot; sans valeur métier démontrée.</li>
 </ul>
 <h2><strong>6.3 Cycle de vie et qualification des anomalies</strong></h2>
 <p>Toute anomalie détectée fera l&#x27;objet d&#x27;un ticket structuré comprenant : <em>Titre explicite ([DOMAINE] Description), Environnement, Préconditions, Étapes de reproduction numérotées, Résultat obtenu vs Résultat attendu, Preuves (captures d&#x27;écran, vidéo ou trace Playwright)</em>.</p>
@@ -184,13 +190,12 @@ a { color: #155c88; text-decoration: underline; }
 <li><strong>Sévérité (Impact technique/fonctionnel) :</strong> * Critique / Bloquante | Majeure | Mineure | Cosmétique (Trivial)</li>
 <li><strong>Priorité (Urgence de correction métier) :</strong> * P1 (Immédiate) | P2 (Haute - avant release) | P3 (Normale) | P4 (Basse)</li>
 </ul>
-<h2 class="section-title"><strong>7. CRITÈRES D&#x27;ENTRÉE ET DE SORTIE (GO / NO-GO)</strong></h2>
-<p>Les critères GO/NO-GO ci-dessous s'appliqueraient à une campagne future ; aucune campagne d'exécution n'est définie dans ce référentiel.</p>
+<h1><strong>7. CRITÈRES D&#x27;ENTRÉE ET DE SORTIE (GO / NO-GO)</strong></h1>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Type de critère</strong></th><th scope="col"><strong>Condition de validation</strong></th></tr>
 <tr><td><strong>Critère d&#x27;Entrée 1</strong></td><td>Environnement demowebshop.tricentis.com disponible (HTTP 200).</td></tr>
 <tr><td><strong>Critère d&#x27;Entrée 2</strong></td><td>Smoke test initial réussi à 100%.</td></tr>
-<tr><td><strong>Critère d&#x27;Entrée 3</strong></td><td>Référentiel d&#x27;exigences et scénarios de test validés.</td></tr>
+<tr><td><strong>Critère d&#x27;Entrée 3</strong></td><td>Référentiel d&#x27;exigences et cas de test validés.</td></tr>
 <tr><td><strong>Critère d&#x27;Entrée 4</strong></td><td>Jeux de données (comptes, produits, codes promo) prêts.</td></tr>
 <tr><td><strong>Critère de Sortie 1</strong></td><td>100% des tests P1 et P2 exécutés (ou blocage formellement documenté).</td></tr>
 <tr><td><strong>Critère de Sortie 2</strong></td><td>Taux de couverture des exigences critiques à 100%.</td></tr>
@@ -198,20 +203,20 @@ a { color: #155c88; text-decoration: underline; }
 <tr><td><strong>Critère de Sortie 4</strong></td><td>Toutes les anomalies identifiées sont documentées et qualifiées.</td></tr>
 <tr><td><strong>Critère de Sortie 5</strong></td><td>Bilan de campagne (Test Summary Report) rédigé et partagé.</td></tr>
 </table></div>
-<h2 class="section-title"><strong>8. ENVIRONNEMENT ET STRATÉGIE DE DONNÉES</strong></h2>
+<h1><strong>8. ENVIRONNEMENT ET STRATÉGIE DE DONNÉES</strong></h1>
 <h2><strong>8.1 Configuration de l&#x27;environnement</strong></h2>
 <ul>
 <li><strong>URL Cible :</strong> https://demowebshop.tricentis.com/</li>
 <li><strong>Navigateurs de référence :</strong> Google Chrome (dernière version stable - Desktop) en cible principale ; Mozilla Firefox et WebKit/Edge en couverture secondaire (via automatisation).</li>
 </ul>
 <h2><strong>8.2 Gestion des données de test (Test Data Management)</strong></h2>
-<p>Principes de gestion des données pour une campagne future : minimisation des données personnelles, données fictives, comptes isolés et génération reproductible. Aucun jeu de données de test n’est livré dans ce référentiel.</p>
+<p>L&#x27;environnement étant public et partagé, une stratégie d&#x27;isolation des données est indispensable :</p>
 <ul>
-<li><strong>Comptes utilisateurs :</strong> prévoir des comptes dédiés ou des adresses uniques générées pour une campagne, afin d’isoler les données et d’éviter les collisions.</li>
-<li><strong>Produits :</strong> privilégier des références stables du catalogue et documenter les choix retenus au lancement de la campagne.</li>
-<li><strong>Données sensibles :</strong> utiliser uniquement des données fictives ; ne jamais saisir de données personnelles ou bancaires réelles.</li>
+<li><strong>Comptes utilisateurs :</strong> Création de comptes dédiés au projet ou génération dynamique d&#x27;adresses e-mail uniques (qa.portfolio+{timestamp}@test.com) lors des tests automatisés pour éviter la pollution du panier par d&#x27;autres testeurs.</li>
+<li><strong>Produits :</strong> Sélection de produits de référence stables dans le catalogue (ex : <em>14.1-inch Laptop</em>, <em>Build</em><em> </em><em>your</em><em> </em><em>own</em><em> </em><em>expensive</em><em> computer</em>, <em>Computing</em><em> and Internet book</em>).</li>
+<li><strong>Données bancaires :</strong> Utilisation exclusive de numéros de cartes de crédit fictifs respectant l&#x27;algorithme de Luhn (ex : cartes de test Visa 4111...). <strong>Aucune donnée personnelle réelle (RGPD) n&#x27;est utilisée.</strong></li>
 </ul>
-<h2 class="section-title"><strong>9. STRATÉGIE D&#x27;AUTOMATISATION (PLAYWRIGHT)</strong></h2>
+<h1><strong>9. STRATÉGIE D&#x27;AUTOMATISATION (PLAYWRIGHT)</strong></h1>
 <p>Afin d&#x27;industrialiser la non-régression, les tests du <strong>Cercle 1 (Smoke &amp; P1)</strong> seront automatisés avec <strong>Playwright (TypeScript)</strong>.</p>
 <h2><strong>9.1 Principes d&#x27;architecture</strong></h2>
 <ul>
@@ -222,7 +227,7 @@ a { color: #155c88; text-decoration: underline; }
 </ul>
 <h2><strong>9.2 Critères d&#x27;éligibilité à l&#x27;automatisation</strong></h2>
 <p>Seuls seront automatisés les scénarios : <strong>répétitifs</strong>, à <strong>forte criticité métier (P1/P2)</strong>, fonctionnellement <strong>stables</strong>, et dont la vérification est déterministe (calculs de prix, présence d&#x27;éléments DOM). Les vérifications purement ergonomiques ou exploratoires restent manuelles.</p>
-<h2 class="section-title"><strong>10. INDICATEURS CLÉS (KPI) ET REPORTING</strong></h2>
+<h1><strong>10. INDICATEURS CLÉS (KPI) ET REPORTING</strong></h1>
 <p>À l&#x27;issue de la campagne, un <strong>Bilan de Test (Test Summary Report)</strong> sera produit pour éclairer la décision de mise en production (Go / No-Go), articulé autour des métriques suivantes :</p>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Catégorie</strong></th><th scope="col"><strong>Indicateur (KPI)</strong></th><th scope="col"><strong>Formule / Utilité</strong></th></tr>
@@ -232,25 +237,24 @@ a { color: #155c88; text-decoration: underline; }
 <tr><td><strong>Anomalies</strong></td><td>Répartition par sévérité et module</td><td>Identifier les zones de fragilité applicative (Clusters de bugs)</td></tr>
 <tr><td><strong>Risque résiduel</strong></td><td>Tests bloqués ou P1 échoués</td><td>Évaluer le risque métier en cas de mise en production en l&#x27;état</td></tr>
 </table></div>
-<h2 class="section-title"><strong>11. HYPOTHÈSES, CONTRAINTES ET LIMITES</strong></h2>
+<h1><strong>11. HYPOTHÈSES, CONTRAINTES ET LIMITES</strong></h1>
 <ol>
 <li><strong>Absence d&#x27;oracle officiel :</strong> S&#x27;agissant d&#x27;une application de démonstration sans cahier des charges fourni, les exigences reposent sur les standards de l&#x27;industrie e-commerce et l&#x27;observation de l&#x27;existant. Toute ambiguïté fonctionnelle (ex : cumul de codes promotionnels ou règles d&#x27;arrondi des taxes) est documentée comme une <strong>hypothèse métier</strong> dans le référentiel d&#x27;exigences.</li>
 <li><strong>Environnement partagé et non maîtrisé :</strong> L&#x27;environnement demowebshop.tricentis.com est public. Des réinitialisations périodiques de la base de données par l&#x27;éditeur ou des actions concurrentes d&#x27;autres utilisateurs peuvent impacter ponctuellement la disponibilité de certains comptes.</li>
 <li><strong>Simulation des services tiers :</strong> Les passerelles de paiement et d&#x27;expédition étant simulées (mockées) dans l&#x27;application de démo, les tests valident l&#x27;intégration front-end/back-end de la boutique, mais pas les flux bancaires réels.</li>
 </ol>
-<h2 class="section-title"><strong>12. CONCLUSION ET LIVRABLES DU PROJET</strong></h2>
+<h1><strong>12. CONCLUSION ET LIVRABLES DU PROJET</strong></h1>
 <p>Cette stratégie pose un cadre méthodologique rigoureux, orienté par les risques métier, permettant de sécuriser le parcours d&#x27;achat de <strong>Demo Web Shop</strong>. Elle se concrétise à travers un ensemble de livrables interconnectés constituant ce projet de portfolio :</p>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Réf.</strong></th><th scope="col"><strong>Livrable</strong></th><th scope="col"><strong>Description</strong></th></tr>
 <tr><td><strong>01</strong></td><td><strong>Stratégie de Test</strong></td><td>Présent document définissant le cadre, l&#x27;approche par les risques et la gouvernance QA.</td></tr>
 <tr><td><strong>02</strong></td><td><strong>Référentiel d&#x27;Exigences</strong></td><td>Spécifications rétro-conçues (Business et Functional Requirements) et hypothèses métier.</td></tr>
-<tr><td><strong>03</strong></td><td><strong>Patrimoine de scénarios de test</strong></td><td>Scénarios manuels détaillés (positifs, négatifs, cas limites) organisés par domaine.</td></tr>
-<tr><td><strong>04</strong></td><td><strong>Matrice de Traçabilité (RTM)</strong></td><td>Tableau croisé démontrant la couverture à 100% des exigences par les scénarios de test.</td></tr>
+<tr><td><strong>03</strong></td><td><strong>Patrimoine de Cas de Test</strong></td><td>Scénarios manuels détaillés (positifs, négatifs, cas limites) organisés par domaine.</td></tr>
+<tr><td><strong>04</strong></td><td><strong>Matrice de Traçabilité (RTM)</strong></td><td>Tableau croisé démontrant la couverture à 100% des exigences par les cas de test.</td></tr>
 <tr><td><strong>05</strong></td><td><strong>Bilan de Campagne</strong></td><td>Rapport d&#x27;exécution final, métriques qualité, fiches d&#x27;anomalies et avis Go/No-Go.</td></tr>
 <tr><td><strong>06</strong></td><td><strong>Suite Automatisée </strong></td><td>Dépôt Git contenant les scripts E2E Playwright (architecture POM) pour le socle TNR.</td></tr>
 </table></div>
-</main>
-
+</main><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>

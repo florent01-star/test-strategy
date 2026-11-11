@@ -12,6 +12,7 @@
 - **Périmètre fondé sur les risques**, centré sur les six domaines clés du parcours e-commerce : authentification et session (connexion et inscription), catalogue et produits, panier, codes promotionnels, tunnel de commande, confirmation et historique.
 - **Gouvernance de conception des tests** : **63 scénarios de test** priorisés, avec scénarios **positifs (39)** et **négatifs (24)**, répartis par priorité : **P1 (39)**, **P2 (19)** et **P3 (5)**.
 - **Traçabilité complète** : **100 % des 62 FR** sont reliées à au moins un scénario de test dans la matrice.
+*Ce chiffre mesure la **traçabilité** (chaque exigence a au moins un scénario de test), pas la **profondeur** de couverture : celle-ci est volontairement plus dense sur les domaines à fort risque (voir l'[Analyse des risques](https://florent01-star.github.io/test-strategy/Strategie_de_test.html)) et plus légère ailleurs. Il ne s'agit pas non plus du résultat d'une exécution.*
 
 ## Livrables
 
@@ -24,7 +25,7 @@ Les livrables sont consultables en ligne (GitHub Pages), sans rien télécharger
 | [Scénarios de test](https://florent01-star.github.io/test-strategy/Test_Cases.html) | Référentiel des 63 scénarios, avec type positif/négatif, priorité, exigences couvertes et objectif de test. |
 | [Matrice de traçabilité](https://florent01-star.github.io/test-strategy/Matrice_Tracabilite.html) | Vue de couverture reliant exigences, scénarios de test et domaines ; permet de vérifier la couverture des 62 FR à 100 %. |
 
-Les fichiers sources (Word et Excel) ne sont pas disponibles (j'en dispose en local).
+Les fichiers sources (Word et Excel) ne sont pas disponibles.
 
 ## Note méthodologique
 
