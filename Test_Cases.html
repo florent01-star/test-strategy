@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>Cas de test — Référentiel</title>
+<title>Scénarios de test — Référentiel</title>
 <style>
 :root{--ink:#172b4d;--muted:#63748b;--line:#dce4ee;--accent:#2358a8;--surface:#fff;--canvas:#f3f6fa;--stripe:#f7f9fc}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--canvas);color:var(--ink);font:15px/1.55 Arial,Helvetica,sans-serif}
@@ -18,14 +18,14 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 </style>
 </head>
 <body>
-<header><div class="eyebrow">Référentiel qualité · E-commerce</div><h1>Cas de test</h1><p>Inventaire et spécifications des scénarios de test, regroupés par feuille du classeur source.</p></header>
-<main><div class="intro"><span>Contenu extrait du classeur « Test Cases.xlsx ».</span><span class="count">7 feuilles · 112 lignes de données</span></div>
+<header><div class="eyebrow">Référentiel qualité · E-commerce</div><h1>Scénarios de test</h1><p>Conception de haut niveau : objectif, priorité, couverture.</p></header>
+<main><div class="intro"><span>Référentiel des scénarios de test.</span><span class="count">7 domaines · 63 scénarios de test</span></div>
 <section class="sheet" id="sheet-1">
-<div class="section-heading"><span class="sheet-number">01</span><div><h2>Inventaire des cas de tests</h2><p>63 lignes de données</p></div></div>
+<div class="section-heading"><span class="sheet-number">01</span><div><h2>Inventaire des scénarios de test</h2><p>63 lignes de données</p></div></div>
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
-<th>Titre du cas de test</th>
+<th>Titre du scénario de test</th>
 </tr>
 <tr>
 <td>AUTH-TC-001</td>
@@ -234,7 +234,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
-<th>Titre du cas de test</th>
+<th>Titre du scénario de test</th>
 <th>Type</th>
 <th>Exigences couvertes</th>
 <th>Priorité</th>
@@ -321,13 +321,13 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>P2</td>
 <td>Vérifier qu'un même article présent dans le panier visiteur (qté X) et le compte (qté Y) voit sa quantité cumulée ( X+Y ) après connexion.</td>
 </tr>
-<tr><td>AUTH-TC-013</td><td>Inscription nominale d’un nouvel utilisateur</td><td>Positif</td><td>FR-AUTH-02.1, FR-AUTH-02.4</td><td>P1</td><td>Vérifier qu’un nouvel utilisateur peut s’inscrire avec des données valides et obtenir une confirmation de création de compte.</td></tr><tr><td>AUTH-TC-014</td><td>Rejet de l’inscription avec champs obligatoires vides</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier que l’inscription est refusée lorsqu’un champ obligatoire est vide et qu’aucun compte n’est créé.</td></tr><tr><td>AUTH-TC-015</td><td>Rejet d’un format d’e-mail invalide à l’inscription</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’une adresse e-mail au format invalide bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-016</td><td>Rejet d’un mot de passe non conforme à la politique</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’un mot de passe non conforme à la politique bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-017</td><td>Rejet de mots de passe non concordants</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’une confirmation différente du mot de passe bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-018</td><td>Rejet d’une adresse e-mail déjà enregistrée</td><td>Négatif</td><td>FR-AUTH-02.3</td><td>P1</td><td>Vérifier qu’une adresse e-mail déjà enregistrée ne permet pas de créer un compte supplémentaire.</td></tr><tr><td>AUTH-TC-019</td><td>Connexion du nouveau compte et vérification du panier vide</td><td>Positif</td><td>FR-AUTH-02.4, FR-AUTH-02.5</td><td>P1</td><td>Vérifier qu’un nouveau compte peut se connecter et que son panier initial est vide.</td></tr></tbody></table></div></section>
+<tr><td>AUTH-TC-013</td><td>Inscription nominale d’un nouvel utilisateur</td><td>Positif</td><td>FR-AUTH-02.1, FR-AUTH-02.4</td><td>P1</td><td>Vérifier qu’un nouvel utilisateur peut s’inscrire avec des données valides et obtenir une confirmation de création de compte.</td></tr><tr><td>AUTH-TC-014</td><td>Rejet de l’inscription avec champs obligatoires vides</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier que l’inscription est refusée lorsqu’un champ obligatoire est vide et qu’aucun compte n’est créé.</td></tr><tr><td>AUTH-TC-015</td><td>Rejet d’un format d’e-mail invalide à l’inscription</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’une adresse e-mail au format invalide bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-016</td><td>Rejet d’un mot de passe de moins de 6 caractères</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’un mot de passe de moins de 6 caractères bloque l’inscription et qu’aucun compte n’est créé.</td></tr><tr><td>AUTH-TC-017</td><td>Rejet de mots de passe non concordants</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’une confirmation différente du mot de passe bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-018</td><td>Rejet d’une adresse e-mail déjà enregistrée</td><td>Négatif</td><td>FR-AUTH-02.3</td><td>P1</td><td>Vérifier qu’une adresse e-mail déjà enregistrée ne permet pas de créer un compte supplémentaire.</td></tr><tr><td>AUTH-TC-019</td><td>Connexion du nouveau compte et vérification du panier vide</td><td>Positif</td><td>FR-AUTH-02.4, FR-AUTH-02.5</td><td>P1</td><td>Vérifier qu’un nouveau compte peut se connecter et que son panier initial est vide.</td></tr></tbody></table></div></section>
 <section class="sheet" id="sheet-3">
 <div class="section-heading"><span class="sheet-number">03</span><div><h2>2. Catalogue et Produits</h2><p>11 lignes de données</p></div></div>
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
-<th>Titre du cas de test</th>
+<th>Titre du scénario de test</th>
 <th>Type</th>
 <th>Exigences couvertes</th>
 <th>Priorité</th>
@@ -347,7 +347,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Négatif</td>
 <td>FR-CAT-01.2</td>
 <td>P2</td>
-<td>Vérifier l'impossibilité d'ajouter un produit avec une quantité négative (ex: -1) et la présence d'un message d'erreur bloquant ou la réinitialisation du champ.</td>
+<td>Vérifier qu'une quantité négative (ex. : -1) empêche l'ajout au panier : le produit n'est pas ajouté et un message d'erreur s'affiche dans la barre de notification.</td>
 </tr>
 <tr>
 <td>CAT-TC-003</td>
@@ -355,7 +355,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Négatif</td>
 <td>FR-CAT-01.2</td>
 <td>P2</td>
-<td>Vérifier qu'une saisie de quantité égale à 0 empêche l'ajout au panier et déclenche un message d'alerte explicite.</td>
+<td>Vérifier qu'une quantité égale à 0 empêche l'ajout au panier : le produit n'est pas ajouté et un message d'erreur s'affiche dans la barre de notification.</td>
 </tr>
 <tr>
 <td>CAT-TC-004</td>
@@ -363,7 +363,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Négatif</td>
 <td>FR-CAT-01.2</td>
 <td>P3</td>
-<td>Vérifier le comportement du champ quantité lors de la saisie de caractères non numériques (ex: "abc", caractères spéciaux) et le blocage de l'ajout.</td>
+<td>Vérifier qu'une quantité non numérique (ex. : abc) empêche l'ajout au panier : le produit n'est pas ajouté et un message d'erreur s'affiche dans la barre de notification.</td>
 </tr>
 <tr>
 <td>CAT-TC-005</td>
@@ -426,7 +426,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
-<th>Titre du cas de test</th>
+<th>Titre du scénario de test</th>
 <th>Type</th>
 <th>Exigences couvertes</th>
 <th>Priorité</th>
@@ -502,7 +502,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
-<th>Titre du cas de test</th>
+<th>Titre du scénario de test</th>
 <th>Type</th>
 <th>Exigences couvertes</th>
 <th>Priorité</th>
@@ -522,7 +522,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-PROMO-01.2</td>
 <td>P2</td>
-<td>Vérifier le comportement lors de la saisie d'un second coupon après un premier code valide (remplacement ou refus du cumul selon la règle).</td>
+<td>Vérifier qu'après l'application d'un premier coupon valide, l'application d'un second coupon remplace le précédent : un seul code de réduction reste appliqué.</td>
 </tr>
 <tr>
 <td>PROMO-TC-003</td>
@@ -562,7 +562,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
-<th>Titre du cas de test</th>
+<th>Titre du scénario de test</th>
 <th>Type</th>
 <th>Exigences couvertes</th>
 <th>Priorité</th>
@@ -654,7 +654,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
-<th>Titre du cas de test</th>
+<th>Titre du scénario de test</th>
 <th>Type</th>
 <th>Exigences couvertes</th>
 <th>Priorité</th>
@@ -702,8 +702,9 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 </tr>
 </tbody></table></div></section>
 </main>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
+
+
+
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
