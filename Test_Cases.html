@@ -19,9 +19,9 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 </head>
 <body>
 <header><div class="eyebrow">Référentiel qualité · E-commerce</div><h1>Cas de test</h1><p>Inventaire et spécifications des scénarios de test, regroupés par feuille du classeur source.</p></header>
-<main><div class="intro"><span>Contenu extrait du classeur « Test Cases.xlsx ».</span><span class="count">7 feuilles · 104 lignes de données</span></div>
+<main><div class="intro"><span>Contenu extrait du classeur « Test Cases.xlsx ».</span><span class="count">7 feuilles · 112 lignes de données</span></div>
 <section class="sheet" id="sheet-1">
-<div class="section-heading"><span class="sheet-number">01</span><div><h2>Inventaire des cas de tests</h2><p>52 lignes de données</p></div></div>
+<div class="section-heading"><span class="sheet-number">01</span><div><h2>Inventaire des cas de tests</h2><p>63 lignes de données</p></div></div>
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
@@ -53,16 +53,12 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Persistance avec "Remember me"</td>
 </tr>
 <tr>
-<td>AUTH-TC-008</td>
-<td>Non-persistance sans "Remember me"</td>
-</tr>
-<tr>
 <td>AUTH-TC-009</td>
 <td>Révocation de session après déconnexion</td>
 </tr>
 <tr>
 <td>AUTH-TC-010</td>
-<td>Transfert du panier visiteur (compte vide)</td>
+<td>Fusion du panier visiteur avec compte prérempli</td>
 </tr>
 <tr>
 <td>AUTH-TC-011</td>
@@ -72,7 +68,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>AUTH-TC-012</td>
 <td>Cumul des articles panier (article en commun)</td>
 </tr>
-<tr>
+<tr><td>AUTH-TC-013</td><td>Inscription nominale d’un nouvel utilisateur</td></tr><tr><td>AUTH-TC-014</td><td>Rejet de l’inscription avec champs obligatoires vides</td></tr><tr><td>AUTH-TC-015</td><td>Rejet d’un format d’e-mail invalide à l’inscription</td></tr><tr><td>AUTH-TC-016</td><td>Rejet d’un mot de passe non conforme à la politique</td></tr><tr><td>AUTH-TC-017</td><td>Rejet de mots de passe non concordants</td></tr><tr><td>AUTH-TC-018</td><td>Rejet d’une adresse e-mail déjà enregistrée</td></tr><tr><td>AUTH-TC-019</td><td>Connexion du nouveau compte et vérification du panier vide</td></tr><tr>
 <td>CAT-TC-001</td>
 <td>Navigation et affichage conforme de la fiche produit</td>
 </tr>
@@ -232,9 +228,9 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>CONF-TC-005</td>
 <td>Restitution fidèle du bon de commande depuis l'historique</td>
 </tr>
-</tbody></table></div></section>
+<tr><td>CHK-TC-011</td><td>Rejet d’une date d’expiration de carte échue</td></tr><tr><td>CHK-TC-012</td><td>Rejet d’un CVV mal formaté</td></tr><tr><td>CHK-TC-013</td><td>Rejet du nom de titulaire manquant</td></tr><tr><td>CHK-TC-014</td><td>Rejet du type de carte manquant</td></tr><tr><td>CHK-TC-015</td><td>Affichage et sélection unique des moyens de paiement</td></tr></tbody></table></div></section>
 <section class="sheet" id="sheet-2">
-<div class="section-heading"><span class="sheet-number">02</span><div><h2>1. Authentification et Session</h2><p>12 lignes de données</p></div></div>
+<div class="section-heading"><span class="sheet-number">02</span><div><h2>1. Authentification et Session</h2><p>18 cas détaillés</p></div></div>
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
@@ -248,8 +244,8 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>AUTH-TC-001</td>
 <td>Connexion nominale depuis la page d'accueil</td>
 <td>Positif</td>
-<td>FR-AUTH-01.1, FR-AUTH-01.2, FR-AUTH-01.3</td>
-<td>P1</td><td>Valider la saisie sécurisée, l'authentification avec identifiants valides, la redirection par défaut vers l'accueil et la mise à jour de l'en-tête (Log in  →  Log out).</td>
+<td>FR-AUTH-01.1, FR-AUTH-01.3</td>
+<td>P1</td><td>Valider la saisie sécurisée et l'authentification avec identifiants valides, la redirection par défaut vers l'accueil, l'affichage de l'adresse e-mail du compte dans l'en-tête, le remplacement de « Log in » par cette adresse cliquable vers My Account et l'affichage de « Log out ».</td>
 </tr>
 <tr>
 <td>AUTH-TC-002</td>
@@ -257,24 +253,24 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-AUTH-01.2</td>
 <td>P2</td>
-<td>Valider que l'utilisateur initiant sa connexion depuis la page panier est bien redirigé vers celle-ci </td>
+<td>Valider qu'une connexion initiée depuis la page panier avec des identifiants valides authentifie l'utilisateur et le redirige vers la page panier (et non vers l'accueil).</td>
 </tr>
 <tr>
 <td>AUTH-TC-003</td>
 <td>Échec de connexion avec mail invalide</td><td>Négatif</td>
-<td>FR-AUTH-02.1</td>
+<td>FR-AUTH-06.1</td>
 <td>P1</td><td>Vérifier le blocage et l'affichage du message d'erreur de format "Please enter a valid email address" sous le champ e-mail.</td>
 </tr>
 <tr>
 <td>AUTH-TC-004</td>
 <td>Échec de connexion avec compte inexistant</td><td>Négatif</td>
-<td>FR-AUTH-02.2</td>
+<td>FR-AUTH-06.2</td>
 <td>P2</td><td>Vérifier le rejet d'authentification et le message "No customer account found" lors de la saisie d'un e-mail non enregistré.</td>
 </tr>
 <tr>
 <td>AUTH-TC-005</td>
 <td>Échec de connexion avec mot de passe erroné</td><td>Négatif</td>
-<td>FR-AUTH-02.3</td>
+<td>FR-AUTH-06.3</td>
 <td>P1</td>
 <td>Vérifier le rejet d'authentification et le message "The credentials provided are incorrect" avec un mot de passe invalide.</td>
 </tr>
@@ -284,21 +280,14 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-AUTH-03.1</td>
 <td>P3</td>
-<td>Vérifier que l'utilisateur reste authentifié après une période d'inactivité inférieure au délai d'expiration de session (ex. 20 min).</td>
+<td>Vérifier que l'utilisateur reste authentifié après une période d'inactivité inférieure au délai d'expiration (ex. 20 min), puis lors de la navigation entre plusieurs pages (accueil, catalogue, fiche produit et panier), sans perte de session ni des informations d'authentification.</td>
 </tr>
 <tr>
 <td>AUTH-TC-007</td>
 <td>Persistance avec "Remember me"</td>
 <td>Positif</td>
 <td>FR-AUTH-03.2</td>
-<td>P3</td><td>Vérifier que la session reste active après fermeture et réouverture complète du navigateur si la case "Remember me" a été cochée.</td>
-</tr>
-<tr>
-<td>AUTH-TC-008</td>
-<td>Non-persistance sans "Remember me"</td>
-<td>Positif</td>
-<td>FR-AUTH-03.2</td>
-<td>P3</td><td>Vérifier que la session expire à la fermeture du navigateur si la case "Remember me" n'a pas été cochée.</td>
+<td>P3</td><td>Vérifier qu'après avoir coché « Remember me? » à la connexion, la session reste authentifiée après fermeture complète puis réouverture du navigateur.</td>
 </tr>
 <tr>
 <td>AUTH-TC-009</td>
@@ -306,23 +295,23 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-AUTH-04.1, FR-AUTH-04.2</td>
 <td>P1</td>
-<td>Vérifier que le clic sur "Log out" déconnecte immédiatement l'utilisateur et qu'un retour arrière navigateur ne restaure pas la session.</td>
+<td>Vérifier qu'au clic sur « Log out », la session est détruite, l'adresse e-mail est remplacée par « Log in » et l'accès est révoqué. Après déconnexion, tenter directement My Account, Orders et les pages privées de paiement/checkout, puis utiliser « Précédent » : chaque accès doit exiger une nouvelle authentification et ne pas restaurer la session.</td>
 </tr>
 <tr>
 <td>AUTH-TC-010</td>
-<td>Transfert du panier visiteur (compte vide)</td>
+<td>Fusion du panier visiteur avec compte prérempli</td>
 <td>Positif</td>
 <td>FR-AUTH-05.1</td>
 <td>P1</td>
-<td>Vérifier que les articles ajoutés en tant que visiteur anonyme sont intégralement transférés vers le compte client après connexion.</td>
+<td>Vérifier qu’après connexion à un compte possédant déjà un article, l’article ajouté en tant que visiteur est conservé avec l’article préexistant; aucune sélection n’est écrasée ni arbitrairement dupliquée.</td>
 </tr>
 <tr>
 <td>AUTH-TC-011</td>
 <td>Cumul des articles panier (distinct)</td>
 <td>Positif</td>
-<td>FR-AUTH-05.2</td>
+<td>FR-AUTH-05.1, FR-AUTH-05.2</td>
 <td>P2</td>
-<td>Vérifier la fusion sans perte entre le panier visiteur (Produit A) et le panier préexistant du compte (Produit B).</td>
+<td>Vérifier qu'après connexion à un compte contenant déjà des articles, les articles distincts du panier visiteur et du compte sont tous présents, sans écrasement ni duplication arbitraire; les sélections des articles communs sont fusionnées conformément à la règle de cumul.</td>
 </tr>
 <tr>
 <td>AUTH-TC-012</td>
@@ -332,7 +321,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>P2</td>
 <td>Vérifier qu'un même article présent dans le panier visiteur (qté X) et le compte (qté Y) voit sa quantité cumulée ( X+Y ) après connexion.</td>
 </tr>
-</tbody></table></div></section>
+<tr><td>AUTH-TC-013</td><td>Inscription nominale d’un nouvel utilisateur</td><td>Positif</td><td>FR-AUTH-02.1, FR-AUTH-02.4</td><td>P1</td><td>Vérifier qu’un nouvel utilisateur peut s’inscrire avec des données valides et obtenir une confirmation de création de compte.</td></tr><tr><td>AUTH-TC-014</td><td>Rejet de l’inscription avec champs obligatoires vides</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier que l’inscription est refusée lorsqu’un champ obligatoire est vide et qu’aucun compte n’est créé.</td></tr><tr><td>AUTH-TC-015</td><td>Rejet d’un format d’e-mail invalide à l’inscription</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’une adresse e-mail au format invalide bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-016</td><td>Rejet d’un mot de passe non conforme à la politique</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’un mot de passe non conforme à la politique bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-017</td><td>Rejet de mots de passe non concordants</td><td>Négatif</td><td>FR-AUTH-02.2</td><td>P1</td><td>Vérifier qu’une confirmation différente du mot de passe bloque l’inscription et ne crée aucun compte.</td></tr><tr><td>AUTH-TC-018</td><td>Rejet d’une adresse e-mail déjà enregistrée</td><td>Négatif</td><td>FR-AUTH-02.3</td><td>P1</td><td>Vérifier qu’une adresse e-mail déjà enregistrée ne permet pas de créer un compte supplémentaire.</td></tr><tr><td>AUTH-TC-019</td><td>Connexion du nouveau compte et vérification du panier vide</td><td>Positif</td><td>FR-AUTH-02.4, FR-AUTH-02.5</td><td>P1</td><td>Vérifier qu’un nouveau compte peut se connecter et que son panier initial est vide.</td></tr></tbody></table></div></section>
 <section class="sheet" id="sheet-3">
 <div class="section-heading"><span class="sheet-number">03</span><div><h2>2. Catalogue et Produits</h2><p>11 lignes de données</p></div></div>
 <div class="table-wrap"><table><tbody>
@@ -348,9 +337,9 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>CAT-TC-001</td>
 <td>Navigation et affichage conforme de la fiche produit</td>
 <td>Positif</td>
-<td>FR-CAT-01.1</td>
+<td>FR-CAT-01.1, FR-CAT-01.2</td>
 <td>P1</td>
-<td>Vérifier la redirection correcte depuis le catalogue et l'affichage exhaustif de la fiche (titre, visuel, description, prix unitaire de base et champ de quantité).</td>
+<td>Vérifier la redirection correcte depuis le catalogue et l'affichage exhaustif de la fiche (titre, visuel, description, prix unitaire de base). Vérifier que le champ « Qty » est initialisé à 1.</td>
 </tr>
 <tr>
 <td>CAT-TC-002</td>
@@ -380,9 +369,9 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>CAT-TC-005</td>
 <td>Ajout standard d'un produit simple au panier</td>
 <td>Positif</td>
-<td>FR-CAT-01.3</td>
+<td>FR-CAT-01.2, FR-CAT-01.3</td>
 <td>P1</td>
-<td>Vérifier l'ajout nominal d'un produit standard, l'affichage de la notification de confirmation (bandeau vert) et l'incrémentation du compteur de l'en-tête.</td>
+<td>Vérifier l'ajout nominal d'un produit standard avec une quantité entière positive supérieure à 1 (ex. 2), l'acceptation de cette quantité, la notification de confirmation (bandeau vert) et l'incrémentation correcte du compteur de l'en-tête.</td>
 </tr>
 <tr>
 <td>CAT-TC-006</td>
@@ -396,24 +385,24 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>CAT-TC-007</td>
 <td>Configuration nominale et ajout d'un produit personnalisable</td>
 <td>Positif</td>
-<td>FR-CAT-02.1, FR-CAT-03.1,FR-CAT-03.2,FR-CAT-04.1</td>
+<td>FR-CAT-02.1, FR-CAT-03.1, FR-CAT-03.2, FR-CAT-04.1, FR-CAT-04.2</td>
 <td>P1</td>
-<td>Valider la sélection des options obligatoires (RAM, HDD, CPU), la mise à jour dynamique du prix unitaire affiché et la conformité des attributs transférés au panier.</td>
+<td>Valider la sélection des options obligatoires (RAM, HDD, CPU) et facultatives; après transfert au panier, vérifier sur la ligne correspondante chacune des options sélectionnées (obligatoires et facultatives), sans omission ni substitution. À chaque sélection/désélection d'une option à supplément, vérifier que le prix affiché en haut de la fiche est recalculé immédiatement et vaut exactement le prix de base plus la somme des suppléments actuellement sélectionnés.</td>
 </tr>
 <tr>
 <td>CAT-TC-008</td>
 <td>Ajout d'un produit personnalisable sans options facultatives</td>
 <td>Positif</td>
-<td>FR-CAT-03.1,FR-CAT-03.2</td>
+<td>FR-CAT-03.1, FR-CAT-03.2</td>
 <td>P2</td>
-<td>Vérifier la validation de la commande d'un produit configurable en ne cochant aucune des options facultatives (ex: logiciels additionnels à cocher).</td></tr>
+<td>Vérifier la validation de la commande d'un produit configurable sans cocher d'option facultative et la présence, sur la ligne du panier, de toutes les options obligatoires sélectionnées et d'aucune option facultative.</td></tr>
 <tr>
 <td>CAT-TC-009</td>
 <td>Ajout d'un produit personnalisable avec options facultatives multiples</td>
 <td>Positif</td>
-<td>FR-CAT-03.1,FR-CAT-03.2</td>
+<td>FR-CAT-03.1, FR-CAT-03.2</td>
 <td>P2</td>
-<td>Vérifier le calcul du surcoût cumulé lors de la sélection de plusieurs options facultatives (checkboxes) et leur répercussion exacte sur le total panier.</td>
+<td>Vérifier le calcul du surcoût cumulé de plusieurs options facultatives et contrôler sur la ligne du panier que chaque option sélectionnée est restituée individuellement, sans option manquante ou non sélectionnée.</td>
 </tr>
 <tr>
 <td>CAT-TC-010</td>
@@ -429,7 +418,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CAT-04.2</td>
 <td>P2</td>
-<td>Vérifier que le clic sur le lien "Edit" dans le panier renvoie sur la fiche produit avec les attributs pré-sélectionnés et permet d'enregistrer la mise à jour.</td>
+<td>Vérifier que « Edit » réouvre la fiche avec les attributs pré-sélectionnés et que la modification puis l'enregistrement actualisent le panier conformément aux options choisies.</td>
 </tr>
 </tbody></table></div></section>
 <section class="sheet" id="sheet-4">
@@ -449,7 +438,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CART-01.1, FR-CART-04.1, FR-CART-04.2</td>
 <td>P1</td>
-<td>Vérifier que chaque ligne affiche visuel, titre, attributs configurés, prix unitaire, quantité, total ligne, et que le Sub-Total et le Total général sont exacts.</td>
+<td>Vérifier pour chaque ligne le visuel, le titre, les attributs configurés, le prix unitaire, la quantité et le total ligne. Contrôler le Sub-Total, la remise éventuelle, les frais de livraison, les taxes éventuelles et le Total, selon la formule Sub-Total − remise + livraison + taxes.</td>
 </tr>
 <tr>
 <td>CART-TC-002</td>
@@ -457,7 +446,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CART-01.2</td>
 <td>P3</td>
-<td>Vérifier que le clic sur le nom d'un produit dans le panier redirige vers sa fiche descriptive avec ses attributs pré-sélectionnés.</td>
+<td>Vérifier que le clic sur le nom du produit ouvre sa fiche avec les attributs antérieurement choisis pré-sélectionnés; après modification et enregistrement, vérifier que tous les attributs non modifiés sont conservés et que les attributs modifiés correspondent à la nouvelle sélection.</td>
 </tr>
 <tr>
 <td>CART-TC-003</td>
@@ -465,7 +454,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CART-02.1, FR-CART-04.1, FR-CART-04.2</td>
 <td>P1</td>
-<td>Vérifier que la modification du champ "Qty" suivie d'un clic sur "Update shopping cart" met à jour la quantité et recalcule le total ligne et le sous-total.</td>
+<td>Vérifier qu'après modification de Qty et clic sur « Update shopping cart », la quantité, le total ligne et le Sub-Total sont recalculés; vérifier également que le Total intègre correctement la remise éventuelle, la livraison et les taxes.</td>
 </tr>
 <tr>
 <td>CART-TC-004</td>
@@ -569,7 +558,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 </tr>
 </tbody></table></div></section>
 <section class="sheet" id="sheet-6">
-<div class="section-heading"><span class="sheet-number">06</span><div><h2>5. Tunnel de commande</h2><p>10 lignes de données</p></div></div>
+<div class="section-heading"><span class="sheet-number">06</span><div><h2>5. Tunnel de commande</h2><p>15 lignes de données</p></div></div>
 <div class="table-wrap"><table><tbody>
 <tr>
 <th>ID TC</th>
@@ -585,7 +574,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CHK-01.1, FR-CHK-02.1, FR-CHK-03.1, FR-CHK-04.1, FR-CHK-05.1, FR-CHK-06.2, FR-CHK-07.1, FR-CHK-07.2</td>
 <td>P1</td>
-<td>Valider l'ouverture séquentielle des 6 étapes de l'accordéon avec une adresse pré-enregistrée, un bien matériel, l'expédition Ground, un règlement Check/Money Order et la validation finale.</td>
+<td>Valider, pour un bien physique, le parcours des étapes dans l'ordre. Vérifier qu'à chaque étape N, toute tentative d'ouvrir/poursuivre l'étape N+1 reste bloquée tant que N n'a pas été validée par « Continue ». Confirmer que Shipping Address et Shipping Method sont toutes deux affichées et obligatoires, puis sélectionner l'adresse pré-enregistrée, l'expédition Ground, Check / Money Order et valider le récapitulatif final.</td>
 </tr>
 <tr>
 <td>CHK-TC-002</td>
@@ -639,9 +628,9 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>CHK-TC-008</td>
 <td>Paiement par Carte Bancaire avec coordonnées valides</td>
 <td>Positif</td>
-<td>FR-CHK-05.1, FR-CHK-06.1</td>
+<td>FR-CHK-06.1</td>
 <td>P1</td>
-<td>Vérifier à l'étape 5 qu'une carte valide (Nom, Type, Numéro conforme Luhn, Date non échue, CVV 3-4 chiffres) est acceptée et permet d'accéder à Confirm Order.</td>
+<td>Contrôle positif : vérifier qu'une carte valide (nom, type, numéro conforme à Luhn, date non échue et CVV de 3 ou 4 chiffres) est acceptée et permet d'accéder à Confirm Order.</td>
 </tr>
 <tr>
 <td>CHK-TC-009</td>
@@ -649,7 +638,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Négatif</td>
 <td>FR-CHK-06.1</td>
 <td>P1</td>
-<td>Vérifier le blocage à l'étape 5 lorsque le numéro de carte échoue au contrôle de Luhn, que la date est expirée ou que le CVV est mal formaté.</td>
+<td>Contrôle négatif dédié au numéro : fournir un numéro de carte invalide (échec Luhn), avec les autres champs obligatoires valides; vérifier que la validation est bloquée et que l'erreur porte sur le numéro.</td>
 </tr>
 <tr>
 <td>CHK-TC-010</td>
@@ -657,9 +646,9 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CHK-07.1, FR-CHK-07.2</td>
 <td>P1</td>
-<td>Vérifier à l'étape 6 l'exactitude de toutes les données (adresses, modes, articles, décomposition Sub-Total/Shipping/Tax/Total) et la désactivation du bouton "Confirm" au clic.</td>
+<td>Vérifier à l'étape 6 l'exactitude des adresses, modes et articles, la décomposition Sub-Total / remise / Shipping / Tax / Total, ainsi que la désactivation du bouton « Confirm » au clic.</td>
 </tr>
-</tbody></table></div></section>
+<tr><td>CHK-TC-011</td><td>Rejet d’une date d’expiration de carte échue</td><td>Négatif</td><td>FR-CHK-06.1</td><td>P1</td><td>Contrôle négatif dédié à la date : garder nom, type, numéro et CVV valides, saisir une date d’expiration échue et vérifier le blocage avec une erreur associée à la date.</td></tr><tr><td>CHK-TC-012</td><td>Rejet d’un CVV mal formaté</td><td>Négatif</td><td>FR-CHK-06.1</td><td>P1</td><td>Contrôle négatif dédié au CVV : garder nom, type, numéro et date valides, saisir un CVV non composé de 3 ou 4 chiffres et vérifier le blocage avec une erreur associée au CVV.</td></tr><tr><td>CHK-TC-013</td><td>Rejet du nom de titulaire manquant</td><td>Négatif</td><td>FR-CHK-06.1</td><td>P1</td><td>Contrôle négatif dédié au nom : garder type, numéro, date et CVV valides, omettre uniquement le nom du titulaire et vérifier le blocage avec une erreur associée au champ du nom.</td></tr><tr><td>CHK-TC-014</td><td>Rejet du type de carte manquant</td><td>Négatif</td><td>FR-CHK-06.1</td><td>P1</td><td>Contrôle négatif dédié au type : garder nom, numéro, date et CVV valides, ne sélectionner aucun type de carte et vérifier le blocage avec une erreur associée au champ du type.</td></tr><tr><td>CHK-TC-015</td><td>Affichage et sélection unique des moyens de paiement</td><td>Positif</td><td>FR-CHK-05.1</td><td>P1</td><td>Vérifier que l’étape Payment Method présente les quatre options Cash On Delivery (COD), Check / Money Order, Credit Card et Purchase Order sous forme de boutons radio. Vérifier qu’un seul moyen est sélectionné à la fois, qu’aucune progression n’est possible sans sélection et que le choix sélectionné est conservé à la validation de l’étape.</td></tr></tbody></table></div></section>
 <section class="sheet" id="sheet-7">
 <div class="section-heading"><span class="sheet-number">07</span><div><h2>6. Confirmation et Historique</h2><p>5 lignes de données</p></div></div>
 <div class="table-wrap"><table><tbody>
@@ -677,7 +666,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CONF-01.1, FR-CONF-01.2</td>
 <td>P1</td>
-<td>Vérifier sur /checkout/completed/ la présence du message "Your order has been successfully processed!" et d'un identifiant unique "Order number: XXXXX".</td>
+<td>Vérifier sur /checkout/completed/ le message de succès, la génération et l'affichage d'un « Order number: XXXXX » non vide, puis effectuer une seconde commande indépendante et vérifier que son numéro diffère du premier (unicité). Vérifier aussi la présence du lien « Click here for order details ».</td>
 </tr>
 <tr>
 <td>CONF-TC-002</td>
@@ -701,7 +690,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 <td>Positif</td>
 <td>FR-CONF-03.1</td>
 <td>P1</td>
-<td>Vérifier dans My Account &gt; Orders que la commande figure en première position avec son numéro d'ordre, la date du jour, son statut et le montant total conforme.</td>
+<td>Immédiatement après confirmation, accéder à My Account &gt; Orders et vérifier, sans attente ni opération intermédiaire, que la nouvelle commande figure en tête; comparer son numéro, la date du jour, le statut attendu pour une commande nouvellement validée et le montant total à la confirmation.</td>
 </tr>
 <tr>
 <td>CONF-TC-005</td>
@@ -713,6 +702,7 @@ main{max-width:none;width:100%;margin:28px auto;padding:0 16px 60px}.intro{displ
 </tr>
 </tbody></table></div></section>
 </main>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 </body>

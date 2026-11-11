@@ -41,7 +41,7 @@ a { color: #155c88; text-decoration: underline; }
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Informations</strong></th><th scope="col"><strong>Détails</strong></th></tr>
 <tr><td><strong>Version</strong></td><td>1.1</td></tr>
-<tr><td><strong>Statut</strong></td><td>Validé pour exécution (Projet Portfolio)</td></tr>
+<tr><td><strong>Statut</strong></td><td>Validé</td></tr>
 <tr><td><strong>Application cible</strong></td><td>Tricentis Demo Web Shop (demowebshop.tricentis.com)</td></tr>
 <tr><td><strong>Périmètre</strong></td><td>Parcours d&#x27;achat E-Commerce (End-to-End)</td></tr>
 <tr><td><strong>Auteur</strong></td><td>Florent</td></tr>
@@ -65,7 +65,7 @@ a { color: #155c88; text-decoration: underline; }
 <h2><strong>2.1 Fonctionnalités incluses (In-Scope)</strong></h2>
 <div class="table-wrap"><table>
 <tr><th scope="col"><strong>Domaine fonctionnel</strong></th><th scope="col"><strong>Fonctionnalités et spécificités couvertes</strong></th></tr>
-<tr><td><strong>Authentification et Session</strong></td><td>Connexion, déconnexion, gestion des messages d&#x27;erreur, persistance de la session et fusion du panier (visiteur non connecté vers utilisateur connecté).</td></tr>
+<tr><td><strong>Authentification et Session</strong></td><td>Connexion, déconnexion, inscription utilisateur (accès au formulaire depuis Login, saisie/validation des données, rejet des doublons, création/confirmation du compte, première connexion), gestion des messages d&#x27;erreur, persistance de la session et fusion du panier (visiteur non connecté vers utilisateur connecté).</td></tr>
 <tr><td><strong>Catalogue et Produits</strong></td><td>Produits standards (ex : Books) et produits à options dynamiques (ex : &quot;Build your own computer&quot; avec sélection RAM, HDD, OS, logiciels et impact direct sur le prix unitaire).</td></tr>
 <tr><td><strong>Panier (Shopping Cart)</strong></td><td>Ajout, suppression, modification des quantités, recalcul dynamique des montants, gestion des seuils de stock et acceptation obligatoire des CGV (Terms of service).</td></tr>
 <tr><td><strong>Codes Promotionnels</strong></td><td>Application de coupons de réduction, vérification de l&#x27;éligibilité, recalcul du total et gestion des codes invalides ou expirés.</td></tr>
@@ -137,6 +137,7 @@ a { color: #155c88; text-decoration: underline; }
 <tr><td><strong>Paiement</strong></td><td>Validation d&#x27;une commande avec des données de paiement invalides.</td><td><strong>Moyenne</strong> (Multiplicité des moyens de paiement et contrôles de surface)</td><td>Critique</td><td><strong>P1 - Critique</strong></td></tr>
 <tr><td><strong>Options Produits</strong></td><td>Perte des attributs sélectionnés (RAM, HDD) ou du surcoût lors de l&#x27;ajout au panier.</td><td><strong>Moyenne</strong> (Transmission d&#x27;état entre fiche produit et panier)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
 <tr><td><strong>Login / Session</strong></td><td>Perte ou mauvaise fusion du panier visiteur lors de la connexion au Checkout.</td><td><strong>Moyenne</strong> (Transition session anonyme vers session authentifiée)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
+<tr><td><strong>Login / Session</strong></td><td>Échec de création de compte ou compte dupliqué bloquant l&#x27;accès au checkout et à la commande.</td><td><strong>Moyenne</strong> (Validation de formulaire, contrôle d&#x27;unicité en base et transition vers la première session)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
 <tr><td><strong>Codes Promo</strong></td><td>Application incorrecte d&#x27;une remise ou mauvaise gestion d&#x27;un code invalide.</td><td><strong>Moyenne</strong> (Règles d&#x27;éligibilité et recalcul dynamique du panier)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
 <tr><td><strong>Panier (CGV)</strong></td><td>Accès au Checkout autorisé sans avoir coché la case obligatoire &quot;Terms of service&quot;.</td><td><strong>Faible</strong> (Contrôle booléen simple côté client/serveur)</td><td>Majeur</td><td><strong>P2 - Haute</strong></td></tr>
 <tr><td><strong>Confirmation</strong></td><td>Absence du récapitulatif dans l&#x27;historique client ou panier non vidé après achat.</td><td><strong>Faible</strong> (Affichage de données persistées en fin de flux)</td><td>Moyen</td><td><strong>P3 - Moyenne</strong></td></tr>
@@ -249,5 +250,6 @@ a { color: #155c88; text-decoration: underline; }
 <tr><td><strong>06</strong></td><td><strong>Suite Automatisée </strong></td><td>Dépôt Git contenant les scripts E2E Playwright (architecture POM) pour le socle TNR.</td></tr>
 </table></div>
 </main><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
